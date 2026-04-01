@@ -1,0 +1,34 @@
+Step 1 – Schema Design (Normalization up to 3NF)
+We design four tables: Students, Courses, Instructors, Enrollments.
+To be in 3NF:
+Each table has a primary key
+No repeating groups
+No partial dependency
+No transitive dependency
+Enrollment table resolves the many-to-many relationship between Students and Courses
+
+
+Relational Schema
+
+Students
+student_id (PK)
+name
+email (UNIQUE)
+age (CHECK age > 17)
+
+Instructors
+instructor_id (PK)
+name
+department
+
+Courses
+course_id (PK)
+title
+credits
+instructor_id (FK)
+
+Enrollments
+student_id (FK)
+course_id (FK)
+grade
+Primary Key (student_id, course_id)
